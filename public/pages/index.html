@@ -1,164 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link href="../css/output.css" rel="stylesheet" />
     <!-- <link rel="icon" type="image/x-icon" href="./assets/worldwide 1 (Traced).svg" /> -->
 </head>
+
 <body class="min-h-max bg-background font-main">
-    <header class="bg-gradient-to-br from-black to-title h-[65%] flex flex-col items-center">
+    <header class="bg-gradient-to-br from-black to-title h-[80%] flex flex-col items-center pb-28">
+        <img src="../assets/furia_logo.svg" alt="logo da FURIA" class="w-1/5">
+        <h3 class="text-background font-extrabold text-2xl">A FURIA do Brasil</h3>
     </header>
 
-    <main>
-        <form class="" id="formulario-inscricao">
-            <!-- Nome completo -->
-            <fieldset class="">
-                <label class="" for="nome">Nome completo</label>
-                <input 
-                    type="text" 
-                    id="nome" 
-                    name="nome" 
-                    class="" 
-                    data-input="nome" 
-                    minlength="3" 
-                    required 
-                />
-                <span class="mensagem-erro text-sm text-red-600 mb-2"></span>
-            </fieldset>
-          
-            <!-- Email -->
-            <fieldset class="">
-                <label class="" for="email">Email</label>
-                <input 
-                    type="email" 
-                    id="email" 
-                    name="email" 
-                    class="" 
-                    data-input="email" 
-                    required 
-                />
-                <span class="mensagem-erro text-sm text-red-600 mb-2"></span>
-            </fieldset>
-          
-            <!-- Data de nascimento -->
-            <fieldset class="">
-                <label class="" for="nascimento">Data de nascimento</label>
-                    <input 
-                        type="text" 
-                        id="nascimento" 
-                        name="nascimento" 
-                        class="" 
-                        data-input="nascimento" 
-                        placeholder="__/__/____" 
-                        maxlength="10"
-                        required 
-                    />
-                <span class="mensagem-erro text-sm text-red-600 mb-2"></span>
-            </fieldset>
-          
-            <!-- País -->
-            <fieldset class="">
-                <label class="" for="pais">País</label>
-                <select 
-                    id="pais" 
-                    name="pais" 
-                    class="" 
-                    data-input="pais"
-                    required
-                ></select>
-                <span class="mensagem-erro text-sm text-red-600 mb-2"></span>
-            </fieldset>
+    <main class="w-full h-full flex flex-col items-center mb-20">
+        <section id="header_form"
+            class="bg-background rounded-t-2xl w-[60%] flex flex-col gap-y-8 mb-2 relative -top-8 lg:-top-16 py-6 px-12">
 
-            <!-- Estado -->
-            <fieldset class="">
-                <label class="" for="estado">Estado</label>
-                <select 
-                    id="estado" 
-                    name="estado" 
-                    class="" 
-                    data-input="estado"
-                    required
-                ></select>
-                <span class="mensagem-erro text-sm text-red-600 mb-2"></span>
-            </fieldset>
-          
-            <!-- CPF -->
-            <fieldset class="">
-                <label class="" for="cpf">CPF</label>
-                <input 
-                    type="text" 
-                    id="cpf" 
-                    name="cpf" 
-                    class="" 
-                    data-input="cpf" 
-                    placeholder="000.000.000-00"
-                    maxlength="14"
-                    required 
-                />
-                <span class="mensagem-erro text-sm text-red-600 mb-2"></span>
-            </fieldset>
-          
-            <!-- Interesses -->
-            <fieldset class="">
-                <label class="" for="interesses">Interesses</label>
-                <textarea 
-                    id="interesses" 
-                    name="interesses" 
-                    class="" 
-                    data-input="interesses"
-                ></textarea>
-            </fieldset>
-          
-            <!-- Eventos -->
-            <fieldset class="">
-                <label class="" for="eventos">Eventos</label>
-                <textarea 
-                    id="eventos" 
-                    name="eventos" 
-                    class="" 
-                    data-input="eventos"
-                ></textarea>
-            </fieldset>
-          
-            <!-- Perfil no X (Twitter) -->
-            <fieldset class="">
-                <label class="" for="perfil">Perfil no X</label>
-                <input 
-                    type="url" 
-                    id="perfil" 
-                    name="perfil" 
-                    class="" 
-                    data-input="perfil" 
-                    placeholder="https://x.com/seuperfil"
-                    required
-                />
-                <span class="mensagem-erro text-sm text-red-600 mb-2"></span>
-            </fieldset>
+            <div class="flex flex-col gap-y-3">
+                <h1 class="text-left text-title font-semibold text-2xl">Informações pessoais</h1>
+                <hr class="w-full text-paragraph/25">
+            </div>
 
-            <fieldset class="">
-                <label class="" for="documento">Upload de documento</label>
-                <input 
-                    type="file" 
-                    id="documento" 
-                    name="documento" 
-                    class="" 
-                    data-input="documento" 
-                    accept=".pdf,.doc,.docx,.png,.jpg"
-                />
-            </fieldset>
-        </form>          
+            <form class="flex flex-col gap-y-4" id="formulario-inscricao">
+
+                <div class="grid grid-cols-3 gap-24">
+                    <!-- Nome completo -->
+                    <fieldset class="col-span-2 flex flex-col">
+                        <label class="text-lg font-light text-title" for="nome">Nome completo</label>
+                        <input type="text" id="nome" name="nome"
+                            class="text-base text-paragraph w-full mb-2 mt-2 pl-3 border border-slate-300 py-2 rounded-lg shadow-md placeholder-paragraph/25 
+                        hover:border-yellow-furia hover:ring-1 hover:ring-yellow-furia/50 focus:outline-none focus:border-yellow-furia/50 focus:ring-1 focus:ring-yellow-furia/50"
+                            data-input="nome" minlength="3" required />
+                        <span class="mensagem-erro text-sm text-red-600 mb-2"></span>
+                    </fieldset>
+
+                    <!-- Data de nascimento -->
+                    <fieldset class="flex flex-col">
+                        <label class="text-lg font-light text-title" for="nascimento">Data de nascimento</label>
+                        <input type="text" id="nascimento" name="nascimento"
+                            class="text-base text-paragraph w-full mb-2 mt-2 pl-3 border border-slate-300 py-2 rounded-lg shadow-md placeholder-paragraph/25 
+                        hover:border-yellow-furia hover:ring-1 hover:ring-yellow-furia/50 focus:outline-none focus:border-yellow-furia/50 focus:ring-1 focus:ring-yellow-furia/50"
+                            data-input="nascimento" placeholder="__/__/____" maxlength="10" required />
+                        <span class="mensagem-erro text-sm text-red-600 mb-2"></span>
+                    </fieldset>
+                </div>
+
+                <div class="grid grid-cols-3 gap-24">
+                    <!-- Email -->
+                    <fieldset class="col-span-2 flex flex-col">
+                        <label class="text-lg font-light text-title" for="email">Email</label>
+                        <input type="email" id="email" name="email"
+                            class="text-base text-paragraph w-full mb-2 mt-2 pl-3 border border-slate-300 py-2 rounded-lg shadow-md placeholder-paragraph/25 
+                    hover:border-yellow-furia hover:ring-1 hover:ring-yellow-furia/50 focus:outline-none focus:border-yellow-furia/50 focus:ring-1 focus:ring-yellow-furia/50"
+                            placeholder="email@email.com" data-input="email" required />
+                        <span class="mensagem-erro text-sm text-red-600 mb-2"></span>
+                    </fieldset>
+
+                    <!-- CPF -->
+                    <fieldset class="flex flex-col">
+                        <label class="text-lg font-light text-title" for="cpf">CPF</label>
+                        <input type="text" id="cpf" name="cpf" class="text-base text-paragraph w-full mb-2 mt-2 pl-3 border border-slate-300 py-2 rounded-lg shadow-md placeholder-paragraph/25 
+                        hover:border-yellow-furia hover:ring-1 hover:ring-yellow-furia/50 focus:outline-none focus:border-yellow-furia/50 focus:ring-1 focus:ring-yellow-furia/50" data-input="cpf" placeholder="000.000.000-00"
+                            maxlength="14" required />
+                        <span class="mensagem-erro text-sm text-red-600 mb-2"></span>
+                    </fieldset>
+                </div>
+
+                <!-- País -->
+                <fieldset class="">
+                    <label class="" for="pais">País</label>
+                    <select id="pais" name="pais" class="" data-input="pais" required></select>
+                    <span class="mensagem-erro text-sm text-red-600 mb-2"></span>
+                </fieldset>
+
+                <!-- Estado -->
+                <fieldset class="">
+                    <label class="" for="estado">Estado</label>
+                    <select id="estado" name="estado" class="" data-input="estado" required></select>
+                    <span class="mensagem-erro text-sm text-red-600 mb-2"></span>
+                </fieldset>
+
+                <!-- Interesses -->
+                <fieldset class="">
+                    <label class="" for="interesses">Interesses</label>
+                    <textarea id="interesses" name="interesses" class="" data-input="interesses"></textarea>
+                </fieldset>
+
+                <!-- Eventos -->
+                <fieldset class="">
+                    <label class="" for="eventos">Eventos</label>
+                    <textarea id="eventos" name="eventos" class="" data-input="eventos"></textarea>
+                </fieldset>
+
+                <!-- Perfil no X (Twitter) -->
+                <fieldset class="">
+                    <label class="" for="perfil">Perfil no X</label>
+                    <input type="url" id="perfil" name="perfil" class="" data-input="perfil"
+                        placeholder="https://x.com/seuperfil" required />
+                    <span class="mensagem-erro text-sm text-red-600 mb-2"></span>
+                </fieldset>
+
+                <fieldset class="">
+                    <label class="" for="documento">Upload de documento</label>
+                    <input type="file" id="documento" name="documento" class="" data-input="documento"
+                        accept=".pdf,.doc,.docx,.png,.jpg" />
+                </fieldset>
+            </form>
+        </section>
     </main>
 
     <footer></footer>
-    <script type="module" src="../js/countryState.js"></script>
+    <!-- <script type="module" src="../js/countryState.js"></script> -->
     <script type="module" src="../js/errors.js"></script>
     <script type="module" src="../js/utils/masksForm.js"></script>
 </body>
+
 </html>
