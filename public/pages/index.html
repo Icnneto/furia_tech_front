@@ -15,7 +15,119 @@
 <body class="min-h-max bg-background font-main">
     <header class="bg-gradient-to-br from-black to-title h-[65%] flex flex-col items-center">
     </header>
-    <main></main>
+    <main>
+        <form class="" id="formulario-inscricao">
+            <!-- Nome completo -->
+            <label class="" for="nome">Nome completo</label>
+            <input 
+              type="text" 
+              id="nome" 
+              name="nome" 
+              class="" 
+              data-input="nome" 
+              minlength="3" 
+              required 
+            />
+          
+            <!-- Email -->
+            <label class="" for="email">Email</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              class="" 
+              data-input="email" 
+              required 
+            />
+          
+            <!-- Data de nascimento -->
+            <label class="" for="data-nascimento">Data de nascimento</label>
+            <input 
+              type="text" 
+              id="data-nascimento" 
+              name="data-nascimento" 
+              class="" 
+              data-input="data-nascimento" 
+              placeholder="__/__/____" 
+              maxlength="10"
+              required 
+            />
+          
+            <!-- País -->
+            <label class="" for="pais">País</label>
+            <select 
+              id="pais" 
+              name="pais" 
+              class="" 
+              data-input="pais"
+              required
+            ></select>
+          
+            <!-- Estado -->
+            <label class="" for="estado">Estado</label>
+            <select 
+              id="estado" 
+              name="estado" 
+              class="" 
+              data-input="estado"
+              required
+            ></select>
+          
+            <!-- CPF -->
+            <label class="" for="cpf">CPF</label>
+            <input 
+              type="text" 
+              id="cpf" 
+              name="cpf" 
+              class="" 
+              data-input="cpf" 
+              placeholder="000.000.000-00"
+              maxlength="14"
+              required 
+            />
+          
+            <!-- Interesses -->
+            <label class="" for="interesses">Interesses</label>
+            <textarea 
+              id="interesses" 
+              name="interesses" 
+              class="" 
+              data-input="interesses"
+            ></textarea>
+          
+            <!-- Eventos -->
+            <label class="" for="eventos">Eventos</label>
+            <textarea 
+              id="eventos" 
+              name="eventos" 
+              class="" 
+              data-input="eventos"
+            ></textarea>
+          
+            <!-- Perfil no X (Twitter) -->
+            <label class="" for="perfil-x">Perfil no X</label>
+            <input 
+              type="url" 
+              id="perfil-x" 
+              name="perfil-x" 
+              class="" 
+              data-input="perfil-x" 
+              placeholder="https://x.com/seuperfil"
+            />
+          
+
+            <label class="" for="documento">Upload de documento</label>
+            <input 
+              type="file" 
+              id="documento" 
+              name="documento" 
+              class="" 
+              data-input="documento" 
+              accept=".pdf,.doc,.docx,.png,.jpg"
+            />
+          </form>          
+    </main>
     <footer></footer>
+    <script src="../js/countryState.js"></script>
 </body>
 </html>
