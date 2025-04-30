@@ -73,30 +73,58 @@
                     </fieldset>
                 </div>
 
-                <!-- País -->
-                <fieldset class="">
-                    <label class="" for="pais">País</label>
-                    <select id="pais" name="pais" class="" data-input="pais" required></select>
-                    <span class="mensagem-erro text-sm text-red-600 mb-2"></span>
-                </fieldset>
-
-                <!-- Estado -->
-                <fieldset class="">
-                    <label class="" for="estado">Estado</label>
-                    <select id="estado" name="estado" class="" data-input="estado" required></select>
-                    <span class="mensagem-erro text-sm text-red-600 mb-2"></span>
-                </fieldset>
+                <div class="grid grid-cols-3 gap-24">
+                    <!-- País -->
+                    <fieldset class="">
+                        <label class="text-lg font-light text-title" for="pais">País</label>
+                        <select id="pais" name="pais" class="text-base text-paragraph w-full mb-2 mt-2 pl-3 border border-slate-300 py-2 rounded-lg shadow-md placeholder-paragraph/25 
+                        hover:border-yellow-furia hover:ring-1 hover:ring-yellow-furia/50 focus:outline-none focus:border-yellow-furia/50 focus:ring-1 focus:ring-yellow-furia/50" data-input="pais" required>
+                        </select>
+                        <span class="mensagem-erro text-sm text-red-600 mb-2"></span>
+                    </fieldset>
+    
+                    <!-- Estado -->
+                    <fieldset class="">
+                        <label class="text-lg font-light text-title" for="estado">Estado</label>
+                        <select id="estado" name="estado" class="text-base text-paragraph w-full mb-2 mt-2 pl-3 border border-slate-300 py-2 rounded-lg shadow-md placeholder-paragraph/25 
+                        hover:border-yellow-furia hover:ring-1 hover:ring-yellow-furia/50 focus:outline-none focus:border-yellow-furia/50 focus:ring-1 focus:ring-yellow-furia/50" data-input="estado" required></select>
+                        <span class="mensagem-erro text-sm text-red-600 mb-2"></span>
+                    </fieldset>
+                </div>
 
                 <!-- Interesses -->
-                <fieldset class="">
-                    <label class="" for="interesses">Interesses</label>
-                    <textarea id="interesses" name="interesses" class="" data-input="interesses"></textarea>
-                </fieldset>
+                <div class="flex flex-col gap-y-4">
+                    <div class="grid grid-cols-3 gap-4 items-end">
+                        <fieldset class="col-span-2 flex flex-col">
+                          <label class="text-lg font-light text-title" for="interesses">Interesses</label>
+                          <input
+                            type="text"
+                            id="interesses"
+                            name="interesses"
+                            class="text-base text-paragraph w-full mt-2 pl-3 border border-slate-300 py-2 rounded-lg shadow-md placeholder-paragraph/25 
+                            hover:border-yellow-furia hover:ring-1 hover:ring-yellow-furia/50 focus:outline-none focus:border-yellow-furia/50 focus:ring-1 focus:ring-yellow-furia/50"
+                          />
+                        </fieldset>
+                    
+                        <!-- Botão de adicionar -->
+                        <div>
+                          <button
+                            type="button"
+                            id="btn-adicionar-interesse"
+                            class="bg-yellow-furia/50 text-white text-base px-4 py-2 rounded-lg shadow hover:bg-yellow-furia transition mt-[30px] w-1/2 cursor-pointer"
+                          >
+                            Incluir
+                          </button>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-4" id="interesses-lista"></div>
+                </div>
 
                 <!-- Eventos -->
-                <fieldset class="">
+                <fieldset class="flex flex-col">
                     <label class="" for="eventos">Eventos</label>
-                    <textarea id="eventos" name="eventos" class="" data-input="eventos"></textarea>
+                    <input type="text" id="eventos" name="eventos" class="" data-input="eventos"></input>
                 </fieldset>
 
                 <!-- Perfil no X (Twitter) -->
@@ -120,6 +148,7 @@
     <!-- <script type="module" src="../js/countryState.js"></script> -->
     <script type="module" src="../js/errors.js"></script>
     <script type="module" src="../js/utils/masksForm.js"></script>
+    <script type="module" src="../js/interesses.js"></script>
 </body>
 
 </html>
