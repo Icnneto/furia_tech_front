@@ -2,8 +2,13 @@ const inputInteresse = document.getElementById("interesses");
 const listaInteresses = document.getElementById("interesses-lista");
 const botaoAdicionar = document.getElementById("btn-adicionar-interesse");
 
+let interesses = [];
+
 botaoAdicionar.addEventListener("click", () => {
     const interesse = inputInteresse.value.trim();
+
+    interesses.push(interesse);
+    console.log(interesses)
 
     if (interesse) {
         const tag = document.createElement("div");

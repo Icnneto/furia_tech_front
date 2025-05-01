@@ -149,6 +149,7 @@
                     <span class="mensagem-erro text-sm text-red-600 mb-2"></span>
                 </fieldset>
 
+                <!-- Upload documento -->
                 <fieldset class="flex flex-col">
                     <label class="text-lg font-light text-title mb-2" for="documento">Upload de documento</label>
 
@@ -158,8 +159,8 @@
                         focus:outline-none focus:border-yellow-furia/50 focus:ring-1 focus:ring-yellow-furia/50">
 
                         <!-- SVG inserido -->
-                        <svg class="w-6 h-6 text-paragraph" aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <svg class="w-6 h-6 text-paragraph" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            width="24" height="24" fill="none" viewBox="0 0 24 24">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M12 5v9m-5 0H5a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1h-2M8 9l4-5 4 5m1 8h.01" />
                         </svg>
@@ -170,11 +171,18 @@
                     <!-- Input invisível -->
                     <input type="file" id="documento" name="documento" class="hidden" accept=".pdf,.doc,.docx,.png,.jpg"
                         data-input="documento" />
-                    
+
                     <div id="feedback-validacao" class="mt-2 text-sm italic text-gray-600"></div>
                 </fieldset>
-
             </form>
+
+            <hr class="w-full text-paragraph/25">
+            <div class="flex justify-end">
+                <button type="button" id="btn-concluir" disabled
+                    class="disabled:opacity-50 disabled:cursor-not-allowed bg-yellow-furia text-white text-base px-4 py-2 rounded-lg shadow hover:bg-yellow-furia/85 transition w-1/4 cursor-pointer">
+                    Concluir
+                </button>
+            </div>
         </section>
     </main>
 
@@ -186,6 +194,8 @@
     <script type="module" src="../js/interesses.js"></script>
     <script type="module" src="../js/eventos.js"></script>
     <script type="module" src="../js/upload.js"></script>
+    <script type="module" src="../js/sendForm.js"></script>
+
 
 </body>
 
