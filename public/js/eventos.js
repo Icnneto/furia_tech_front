@@ -24,3 +24,5 @@ botaoAdicionar.addEventListener("click", () => {
         inputEvento.value = "";
     }
 });
+
+export default eventos;

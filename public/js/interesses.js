@@ -24,3 +24,5 @@ botaoAdicionar.addEventListener("click", () => {
         inputInteresse.value = "";
     }
 });
+
+export default interesses;

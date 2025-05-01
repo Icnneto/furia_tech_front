@@ -1,3 +1,7 @@
+import interesses from "./interesses.js";
+import eventos from "./eventos.js";
+import { criarExibirToast } from "./utils/toast.js";
+const body = document.querySelector('body');
 const formulario = document.querySelector('#formulario-inscricao');
 const nomeInput = document.querySelector('#nome');
 const nascimentoInput = document.querySelector('#nascimento');
@@ -5,8 +9,6 @@ const emailInput = document.querySelector('#email');
 const cpfInput = document.querySelector('#cpf');
 const paisInput = document.querySelector('#pais');
 const estadoInput = document.querySelector('#estado');
-const interessesInput = document.querySelectorAll('[data-interesse]');
-const eventosInput = document.querySelectorAll('[data-evento]');
 const perfilInput = document.querySelector('#perfil');
 const fileInput = document.querySelector('#documento');
 const btnConcluir = document.querySelector('#btn-concluir');
@@ -26,3 +28,69 @@ formulario.addEventListener('change', async () => {
         btnConcluir.disabled = false;
     }
 });
+
+formulario.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const respostas = {
+        'nome': nomeInput.value,
+        'nascimento': nascimentoInput.value,
+        'email': emailInput.value,
+        'cpf': cpfInput.value,
+        'pais': paisInput.value,
+        'estado': estadoInput.value,
+        'interesses': interesses,
+        'eventos': eventos,
+        'perfil_x': perfilInput.value,
+        'documento': fileInput.value
+    };
+
+    adicionarPulseBtnConcluir();
+
+    const requestOptions = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(respostas)
+    };
+
+    try {
+        const response = await fetch("http://localhost:3000/form-application", requestOptions);
+        
+        if (!response.ok) {
+            throw new Error(`Erro ao enviar dados: ${response.status}`);
+        };
+
+        removerPulseBtnConcluir();
+
+        const mensagem = 'Seus dados foram enviados com sucesso!';
+        const funcionalidade = 'positivo';
+        criarExibirToast(mensagem, funcionalidade, body);
+
+        setTimeout(() => {
+            window.location.replace("https://www.furia.gg/");;
+        }, 2500);
+    
+    } catch (error) {
+        console.error("Erro ao enviar dados:", error.message);
+
+        const mensagem = 'Ops! Algo de errado aconteceu. Tente novamente!';
+        const funcionalidade = 'negativo';
+        criarExibirToast(mensagem, funcionalidade, body);
+    };
+});
+
+function adicionarPulseBtnConcluir() {
+    btnConcluir.classList.add('animate-pulse');
+};
+
+function removerPulseBtnConcluir() {
+    btnConcluir.classList.remove('animate-pulse');
+};
+
+
+
+
+
+
