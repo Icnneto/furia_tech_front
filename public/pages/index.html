@@ -164,14 +164,14 @@
                                 d="M12 5v9m-5 0H5a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1h-2M8 9l4-5 4 5m1 8h.01" />
                         </svg>
 
-                        Selecionar arquivo
+                        <span id="nome-arquivo" class="text-base text-paragraph">Selecionar arquivo</span>
                     </label>
 
                     <!-- Input invisível -->
                     <input type="file" id="documento" name="documento" class="hidden" accept=".pdf,.doc,.docx,.png,.jpg"
                         data-input="documento" />
                     
-                    <span id="nome-arquivo" class="mt-2 text-sm text-gray-600 italic"></span>
+                    <div id="feedback-validacao" class="mt-2 text-sm italic text-gray-600"></div>
                 </fieldset>
 
             </form>
@@ -179,6 +179,7 @@
     </main>
 
     <footer></footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
     <script type="module" src="../js/countryState.js"></script>
     <script type="module" src="../js/errors.js"></script>
     <script type="module" src="../js/utils/masksForm.js"></script>
