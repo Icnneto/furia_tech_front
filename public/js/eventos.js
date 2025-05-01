@@ -2,8 +2,13 @@ const inputEvento = document.getElementById("eventos");
 const listaEventos = document.getElementById("eventos-lista");
 const botaoAdicionar = document.getElementById("btn-adicionar-eventos");
 
+let eventos = [];
+
 botaoAdicionar.addEventListener("click", () => {
     const evento = inputEvento.value.trim();
+
+    eventos.push(evento);
+    console.log(eventos);
 
     if (evento) {
         const tag = document.createElement("div");

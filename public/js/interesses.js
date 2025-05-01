@@ -8,7 +8,7 @@ botaoAdicionar.addEventListener("click", () => {
     const interesse = inputInteresse.value.trim();
 
     interesses.push(interesse);
-    console.log(interesses)
+    console.log(interesses);
 
     if (interesse) {
         const tag = document.createElement("div");
