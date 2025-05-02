@@ -33,7 +33,7 @@ formulario.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const respostas = {
-        'nome': nomeInput.value,
+        'username': nomeInput.value,
         'nascimento': nascimentoInput.value,
         'email': emailInput.value,
         'cpf': cpfInput.value,
