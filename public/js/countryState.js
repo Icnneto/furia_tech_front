@@ -11,12 +11,13 @@ async function fillCountries () {
 
         countries.forEach(country => {
             formPais.innerHTML += `
-                <option value="${country.iso2}">${country.name}</option>
+                <option value="${country.name}" data-code="${country.iso2}">${country.name}</option>
             `
         });
 
         formPais.addEventListener('change', async (event) => {
-            const countryCode = event.target.value;
+            const selectedOption = event.target.selectedOptions[0];
+            const countryCode = selectedOption.dataset.code;;
 
             if (countryCode) {
                 await fillStates(countryCode);
@@ -36,7 +37,7 @@ async function fillStates(countryCode) {
 
         states.forEach(state => {
             formEstado.innerHTML += `
-                <option value="${state.iso2}">${state.name}</option>
+                <option value="${state.name}">${state.name}</option>
             `;
         });
 
