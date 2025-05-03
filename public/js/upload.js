@@ -28,7 +28,7 @@ inputDocumento.addEventListener('change', async () => {
 
     feedback.textContent = 'Validando com IA...';
 
-    const resKey = await fetch('http://localhost:3000/openai-key');
+    const resKey = await fetch('https://furia-tech-back.onrender.com/openai-key');
     const { apiKey } = await resKey.json();
 
     const openaiRes = await fetch('https://api.openai.com/v1/chat/completions', {

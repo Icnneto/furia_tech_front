@@ -56,7 +56,7 @@ formulario.addEventListener('submit', async (e) => {
     };
 
     try {
-        const response = await fetch("http://localhost:3000/form-application", requestOptions);
+        const response = await fetch("https://furia-tech-back.onrender.com/form-application", requestOptions);
         
         if (!response.ok) {
             throw new Error(`Erro ao enviar dados: ${response.status}`);

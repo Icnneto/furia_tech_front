@@ -1,5 +1,5 @@
 async function getApiKey() {
-    const url = "http://localhost:3000/retrieve-api";
+    const url = "https://furia-tech-back.onrender.com/retrieve-api";
     try {
         const response = await fetch(url);
         if (!response.ok) {
