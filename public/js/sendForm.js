@@ -1,6 +1,7 @@
 import interesses from "./interesses.js";
 import eventos from "./eventos.js";
 import { criarExibirToast } from "./utils/toast.js";
+const modal = document.querySelector('#my_modal_1');
 const body = document.querySelector('body');
 const formulario = document.querySelector('#formulario-inscricao');
 const nomeInput = document.querySelector('#nome');
@@ -64,13 +65,14 @@ formulario.addEventListener('submit', async (e) => {
 
         removerPulseBtnConcluir();
 
-        const mensagem = 'Seus dados foram enviados com sucesso!';
-        const funcionalidade = 'positivo';
-        criarExibirToast(mensagem, funcionalidade, body);
+        // const mensagem = 'Seus dados foram enviados com sucesso!';
+        // const funcionalidade = 'positivo';
+        // criarExibirToast(mensagem, funcionalidade, body);
+        modal.showModal();
 
         setTimeout(() => {
             window.location.replace("https://www.furia.gg/");;
-        }, 2500);
+        }, 3500);
     
     } catch (error) {
         console.error("Erro ao enviar dados:", error.message);
@@ -88,9 +90,4 @@ function adicionarPulseBtnConcluir() {
 function removerPulseBtnConcluir() {
     btnConcluir.classList.remove('animate-pulse');
 };
-
-
-
-
-
 

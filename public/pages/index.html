@@ -141,14 +141,10 @@
                 <!-- Perfil no X (Twitter) -->
                 <fieldset class="flex flex-col">
                     <label class="text-lg font-light text-title" for="perfil">Perfil no X</label>
-                    <input 
-                        type="url" 
-                        id="perfil" 
-                        name="perfil"
-                        value="https://x.com/"
+                    <input type="url" id="perfil" name="perfil" value="https://x.com/"
                         class="text-base text-paragraph w-1/3 mb-2 mt-2 pl-3 border border-slate-300 py-2 rounded-lg shadow-md placeholder-paragraph/25 
                     hover:border-yellow-furia hover:ring-1 hover:ring-yellow-furia/50 focus:outline-none focus:border-yellow-furia/50 focus:ring-1 focus:ring-yellow-furia/50"
-                    data-input="perfil" placeholder="seuperfil" required />
+                        data-input="perfil" placeholder="seuperfil" required />
                     <span class="mensagem-erro text-sm text-red-600 mb-2"></span>
                 </fieldset>
 
@@ -181,12 +177,22 @@
                 <hr class="w-full text-paragraph/25">
 
                 <fieldset class="flex justify-end">
-                    <input type="submit" value="Concluir" id="btn-concluir" 
+                    <input type="submit" value="Concluir" id="btn-concluir"
                         class="disabled:opacity-50 disabled:cursor-not-allowed bg-yellow-furia text-white text-base px-4 py-2 rounded-lg shadow hover:bg-yellow-furia/85 transition w-1/4 cursor-pointer">
                     </input>
                 </fieldset>
             </form>
-
+            <!-- Open the modal using ID.showModal() method -->
+            <dialog id="my_modal_1" class="modal bg-background shadow-2xl">
+                <div class="modal-box flex flex-col gap-y-2 bg-background shadow-2xl h-64">
+                    <h3 class="mb-2 text-2xl text-title font-bold">Olá, Furioso(a)!</h3>
+                    <p class="text-xl text-paragraph font-semibold">Recebemos seus dados!</p>
+                    <p class="mb-8 text-lg text-paragraph font-light">
+                        Agora você receberá informações sobre produtos e eventos mais alinhados ao seu perfil!
+                    </p>
+                    <p class="text-lg text-yellow-furia font-light text-right">Muito obrigado!</p>
+                </div>
+            </dialog>
         </section>
     </main>
 
